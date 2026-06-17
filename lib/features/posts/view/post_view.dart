@@ -14,7 +14,6 @@ class _BlogListScreenState extends State<BlogListScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     futurePosts = PostService().getPosts();
