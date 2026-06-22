@@ -1,5 +1,7 @@
-import 'package:api/features/posts/view/post_create.dart';
+import 'package:api/features/posts/controllers/calculator_controller.dart';
+import 'package:api/features/posts/view/calculator.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,6 +12,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(debugShowCheckedModeBanner: false, home: PostCreate());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: ChangeNotifierProvider(
+        create: (context) => CalculatorController(),
+        child: CalculatorView(),
+      ),
+    );
   }
 }
