@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:api/features/posts/models/post_model.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
 class PostService {
@@ -18,6 +19,19 @@ class PostService {
       return posts;
     } else {
       throw Exception("Failed to load from server");
+    }
+  }
+
+  Future<void> sendDataToServer(String title, String body) async {
+    final response = await http.post(
+      Uri.parse(url),
+      body: jsonEncode({"title": title, "body": body}),
+    );
+
+    if (response.statusCode == 201) {
+      debugPrint(response.body);
+    } else {
+      throw Exception("Somethings went worng");
     }
   }
 }

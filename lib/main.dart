@@ -1,4 +1,4 @@
-import 'package:api/features/posts/view/photo_view.dart';
+import 'package:api/features/posts/view/post_create.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,6 +10,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(debugShowCheckedModeBanner: false, home: PhotoView());
+    return const MaterialApp(debugShowCheckedModeBanner: false, home: PostCreate());
   }
 }
